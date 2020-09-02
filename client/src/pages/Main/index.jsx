@@ -6,16 +6,16 @@ import API from '../../util/API'
 
 const Main = () => {
 
-    const [example, setExample] = useState([])
+    const [book, setBook] = useState([])
 
     useEffect(() => {
-        loadExample()
+        loadbook()
     }, []);
 
-    function loadExample() {
-        API.getExamples()
+    function loadbook() {
+        API.getBooks()
             .then(res => {
-                setExample(res.data)
+                setBook(res.data)
                 console.log(res)
             })
             .catch(err => console.log(err));
@@ -26,12 +26,12 @@ const Main = () => {
             <Header1 text='Example text' />
 
 
-            {example.length ? (
+            {book.length ? (
                 <div>
-                    {example.map(example => (
-                        <div key={example._id}>
-                            <Title text={example.title} />
-                            <Comment text={example.comment} />
+                    {book.map(book => (
+                        <div key={book._id}>
+                            <Title text={book.title} />
+                            <Comment text={book.author} />
                         </div>
                     ))}
                 </div>

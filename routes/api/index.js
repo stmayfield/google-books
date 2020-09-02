@@ -1,8 +1,6 @@
 const router = require('express').Router();
-const indexRoute = require('./example');
+const bookRoute = require('./bookSearch');
 
-router.use('/index', indexRoute);
-
-
+router.use('/book', bookRoute);
 
 module.exports = router
