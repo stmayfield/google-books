@@ -5,6 +5,7 @@ import Comment from '../../components/Comment'
 import BookCard from '../../components/BookCard'
 import SearchForm from '../../components/SearchForm'
 import API from '../../util/API'
+import { PromiseProvider } from "mongoose";
 
 const Main = () => {
 
@@ -33,6 +34,7 @@ const Main = () => {
                         <div key={book._id}>
                             <BookCard
                                 title={book.title}
+                                url={book.link}
                                 author={book.author}
                                 text={book.description}
                                 date={book.date}
