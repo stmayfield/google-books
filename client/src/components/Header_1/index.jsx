@@ -4,7 +4,9 @@ import './style.css'
 const Header1 = (props) => {
     return (
         <div>
-            <h1>{props.text}</h1>
+            <a href="/">
+                <h1>{props.text}</h1>
+            </a>
         </div>
     );
 }
