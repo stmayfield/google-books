@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Header1 from '../../components/Header_1'
 import Title from '../../components/Title'
 import Comment from '../../components/Comment'
+import BookCard from '../../components/BookCard'
+import SearchForm from '../../components/SearchForm'
 import API from '../../util/API'
 
 const Main = () => {
@@ -23,15 +25,18 @@ const Main = () => {
 
     return (
         <>
-            <Header1 text='Example text' />
-
-
+            <Header1 text='Google Books Search' />
+            <SearchForm />
             {book.length ? (
                 <div>
                     {book.map(book => (
                         <div key={book._id}>
-                            <Title text={book.title} />
-                            <Comment text={book.author} />
+                            <BookCard
+                                title={book.title}
+                                author={book.author}
+                                text={book.description}
+                                date={book.date}
+                            />
                         </div>
                     ))}
                 </div>
